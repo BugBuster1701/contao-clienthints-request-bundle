@@ -1,0 +1,57 @@
+{
+	"name":"bugbuster/contao-clienthints-request-bundle",
+	"description":"Contao 4/5 client hints request bundle.",
+	"keywords":["contao","bundle","client","hints"],
+	"type":"contao-bundle",
+	"homepage":"http://contao.ninja",
+	"license":"LGPL-3.0-or-later",
+	"authors":[
+		{
+			"name":"Glen Langer",
+			"homepage":"http://contao.ninja",
+			"role":"Developer"
+		}
+	],
+	"funding": [
+		{
+			"type": "other",
+			"url": "https://www.amazon.de/wishlist/26HHEJOU03G76"
+		}
+	],
+	"support":{
+		"issues":"https://github.com/BugBuster1701/contao-clienthints-request-bundle/issues",
+		"source":"https://github.com/BugBuster1701/contao-clienthints-request-bundle",
+		"forum":"https://community.contao.org/de/forumdisplay.php?119-Sonstige-Erweiterungen"
+	},
+	"require":{
+		"php": "^7.4 || ^8.0",
+		"contao/core-bundle": "^4.13 || ^5.2",
+		"symfony/deprecation-contracts": "^2.1 || ^3.0"
+	},
+	"require-dev": {
+			"contao/manager-plugin": "^2.0",
+			"friendsofphp/php-cs-fixer": "^3.0",
+			"phpunit/phpunit": "^8.5 || ^9.3"
+	},
+	"conflict": {
+			"contao/manager-plugin": "<2.0 || >=3.0"
+	},
+	"autoload":{
+			"psr-4": {
+					"BugBuster\\ClientHintsRequestBundle\\": "src/"
+		}
+	},
+	"extra":{
+		"branch-alias": {
+			"dev-develop": "1.0.x-dev"
+		},
+		"contao-manager-plugin": "BugBuster\\ClientHintsRequestBundle\\ContaoManager\\Plugin"
+	},
+	"config": {
+		"allow-plugins": {
+			"contao-components/installer": true,
+			"contao/manager-plugin": true,
+			"php-http/discovery": true
+		}
+	}
+}

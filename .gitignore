@@ -1,0 +1,9 @@
+.git/
+.settings/
+.buildpath
+.project
+.phpunit.result.cache
+# Transifex
+/.tx/
+vendor/
+composer.lock
