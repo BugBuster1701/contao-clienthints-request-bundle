@@ -17,6 +17,7 @@ namespace BugBuster\ClientHintsRequestBundle\ContaoManager;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use Symfony\Component\Config\Loader\LoaderInterface;
 
 /**
  * Plugin for the Contao Manager.
@@ -29,8 +30,18 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create('BugBuster\ClientHintsRequestBundle\\BugBusterClientHintsRequestBundle\')
+            BundleConfig::create('BugBuster\ClientHintsRequestBundle\BugBusterClientHintsRequestBundle')
                 ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
         ];
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig): void
+    {
+        //$loader->load(__DIR__ . '/../config/parameters.yml');
+        //$loader->load(__DIR__.'/../config/services.yml');
+        $loader->load(__DIR__ . '/../config/listener.yml');
     }
 }

@@ -8,7 +8,7 @@ class RequestListener
 {
     public function onKernelResponse(ResponseEvent $event)
     {
-        if (!$event->isMasterRequest()) {
+        if (!$event->isMainRequest()) {
             // don't do anything if it's not the master request
             return;
         }
@@ -16,6 +16,6 @@ class RequestListener
         $response = $event->getResponse();
         
         // set a single header
-        $response->headers->set("Example-Header", "ExampleValue");
+        $response->headers->set('Accept-CH', 'Sec-CH-UA-Full-Version, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA-Model, Sec-CH-UA-Arc');
     }
 }
