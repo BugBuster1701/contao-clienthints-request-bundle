@@ -14,12 +14,12 @@ declare(strict_types=1);
 
 namespace BugBuster\ClientHintsRequestBundle\ContaoManager;
 
+use BugBuster\ClientHintsRequestBundle\BugBusterClientHintsRequestBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Symfony\Component\Config\Loader\LoaderInterface;
-use BugBuster\ClientHintsRequestBundle\BugBusterClientHintsRequestBundle;
 
 /**
  * Plugin for the Contao Manager.
@@ -33,7 +33,7 @@ class Plugin implements BundlePluginInterface
     {
         return [
             BundleConfig::create(BugBusterClientHintsRequestBundle::class)
-                ->setLoadAfter([ContaoCoreBundle::class])
+                ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
 
