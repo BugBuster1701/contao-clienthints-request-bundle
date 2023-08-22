@@ -2,7 +2,8 @@ services:
     _defaults: { autowire: true, autoconfigure: true, public: false }
 
     # Register EventListener onKernelResponse
-    BugBuster\ClientHintsRequestBundle\EventListener\RequestListener:
+    bugbuster.clienthintsrequest.kernelresponse_listener:
+        class: "BugBuster\\ClientHintsRequestBundle\\EventListener\\RequestListener"
         public: true
         tags:
             - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
